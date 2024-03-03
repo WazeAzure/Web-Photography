@@ -9,3 +9,8 @@
 .customRowEd div {
     margin: 0 1rem;
 }
+
+.customRowEd img {
+    width: auto;
+    height: 70vh;
+}

@@ -93,7 +93,7 @@ const ModalForm = () => {
                             })
                             
                             let isExist = false
-                            options.forEact((x) => {
+                            options.forEach((x) => {
                                 if (x.value == formTopik){
                                     isExist = true;
                                 }
