@@ -29,8 +29,8 @@ const CardPhoto = ({d, i}) => {
     }
 
     return (
-        <Card style={{maxWidth: "18rem", margin: "0 1rem"}} id={i}>
-            <Card.Img variant="top" src={d.url}/>
+        <Card style={{maxWidth: "18rem", margin: "1rem 1rem"}} id={i}>
+            <Card.Img variant="top" src={d.url} style={{objectFit: "cover", height: "150px"}} />
             <Card.ImgOverlay>
                 <Button variant="secondary">
                     <FontAwesomeIcon icon={faPen} />
@@ -40,8 +40,8 @@ const CardPhoto = ({d, i}) => {
                 </Button>
             </Card.ImgOverlay>
             <Card.Body>
-                <Card.Title>{d.title}</Card.Title>
-                <Card.Text>Uploaded: {d.date.toDate().toDateString()}</Card.Text>
+                {/* <Card.Title>{d.title}</Card.Title> */}
+                <Card.Text>{d.title}</Card.Text>
             </Card.Body>
         </Card>
     )

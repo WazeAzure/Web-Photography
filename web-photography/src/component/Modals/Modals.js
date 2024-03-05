@@ -158,13 +158,13 @@ const ModalForm = () => {
                                 Please input a title.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group controlId="formDeskripsi" className="mb-3">
+                        {/* <Form.Group controlId="formDeskripsi" className="mb-3">
                             <Form.Label>Deskripsi:</Form.Label>
                             <Form.Control as="textarea" rows={3} required value={formDeskripsi} onChange={handleFormDeskripsi}/>
                             <Form.Control.Feedback type="invalid">
                                 Please input a description.
                             </Form.Control.Feedback>
-                        </Form.Group>
+                        </Form.Group> */}
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>

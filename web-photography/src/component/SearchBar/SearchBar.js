@@ -19,7 +19,6 @@ const SearchBar = () => {
     return (
         <form className="col" onSubmit={handleSubmit}>
         <Form.Group as={Col} controlId="formSearch">
-            {testing}
             <InputGroup className="mb-3" >
                 <Form.Control
                     placeholder="Recipient's username"

@@ -10,9 +10,11 @@ import Login from './page/Login';
 import Dashboard from './page/Dashboard';
 import Loading from './page/Loading';
 import Gallery from './page/Gallery';
+import About from './page/About';
 
 import NavBar from './component/NavBar/NavBar';
 import PrivateRoute from './page/PrivateRoute';
+import Contact from './page/Contact';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,6 +35,7 @@ function App() {
           li={[
           // ['Home', '', '/'],
           ['About', '', '/about'],
+          ['Contact', '', '/contact'],
           ]}
         />
         <section className="col">
@@ -42,6 +45,8 @@ function App() {
               <Route path='/dashboard' element={<PrivateRoute />}>
                 <Route path="/dashboard" element={<Dashboard />}/>
               </Route>
+              <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
               <Route path="/gallery/:name" element={<Gallery />} />
           </Routes>
         </section>
