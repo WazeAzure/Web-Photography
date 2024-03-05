@@ -35,10 +35,8 @@ const Dashboard = () => {
         <div className="container align-middle" style={{marginTop: "1rem"}}>
             <h1>Web Portfolio Dashboard</h1>
             <hr />
-            <Row>
-                <Utilities />
-                <CardView />
-            </Row>
+            <Utilities />
+            <CardView />
         </div>
     )
 }
