@@ -91,6 +91,8 @@ const ModalForm = () => {
                                 date: Timestamp.now(),
                                 title: formJudul
                             })
+
+                            
                             
                             let isExist = false
                             options.forEach((x) => {
@@ -102,6 +104,11 @@ const ModalForm = () => {
                             if(!isExist){
                                 const docRef2 = addDoc(collection(db, "topik"), {
                                     name: formTopik
+                                })
+
+                                const docRef3 = addDoc(collection(db, "deskripsi-utama"), {
+                                    name: formTopik,
+                                    description: ""
                                 })
                             }
                 

@@ -11,7 +11,7 @@ const CardView = () => {
         const unsubscribe = onSnapshot(query(collection(db, "gambar"), orderBy("date")), (querySnapshot) => {
             const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             setData(newData);
-            console.log(newData); // Log the new data, not the state variable 'data'
+            // console.log(newData); // Log the new data, not the state variable 'data'
         });
 
         // Return the unsubscribe function to clean up the listener
