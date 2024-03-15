@@ -87,7 +87,7 @@ const Gallery = () => {
                 <div className="" style={{width: "20rem"}}>
                     <h1>{name}
                     { isAuthenticated &&
-                        <Button variant="secondary" onClick={handleEdit}>
+                        <Button variant="secondary" onClick={handleEdit} style={{marginLeft: "1rem"}}>
                             <FontAwesomeIcon icon={faPen} />
                         </Button>
                     }

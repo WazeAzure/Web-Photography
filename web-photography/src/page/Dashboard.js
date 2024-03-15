@@ -8,8 +8,25 @@ import Utilities from '../component/Utilities/Utilities';
 import CardView from '../component/CardView/CardView';
 import { Row } from 'react-bootstrap';
 
+import { onSnapshot, query, collection, orderBy, getDocs } from "firebase/firestore";
+import { db } from '../firebase';
+
 const Dashboard = () => {
     const [photoList, setPhotoList] = useState([]);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const unsubscribe = onSnapshot(query(collection(db, "gambar"), orderBy("date")), (querySnapshot) => {
+            const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+            setData(newData)
+            setPhotoList(newData)
+            console.log(newData)
+            // console.log(newData); // Log the new data, not the state variable 'data'
+        });
+
+        // Return the unsubscribe function to clean up the listener
+        return () => unsubscribe();
+    }, [])
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     useEffect(()=>{
@@ -31,14 +48,13 @@ const Dashboard = () => {
           });
          
     }, [])
-    console.log(isLoggedIn);
 
     return (
         <div className="container align-middle" style={{marginTop: "1rem"}}>
             <h1>Web Portfolio Dashboard</h1>
             <hr />
-            <Utilities photoList={photoList} setPhotoList={setPhotoList} />
-            <CardView  photoList={photoList} setPhotoList={setPhotoList} />
+            <Utilities photoList={photoList} setPhotoList={setPhotoList} data={data} setData={setData} />
+            <CardView  photoList={photoList} setPhotoList={setPhotoList} data={data} setData={setData} />
         </div>
     )
 }

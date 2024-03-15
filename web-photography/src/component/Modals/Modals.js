@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import CreatableSelect from 'react-select/creatable';
 import { db, storage } from "../../firebase";
-import { Timestamp, addDoc, collection, onSnapshot } from "@firebase/firestore";
+import { Timestamp, addDoc, collection, onSnapshot, query, orderBy } from "@firebase/firestore";
 import { getDownloadURL, ref as storageRef, uploadBytes } from "firebase/storage";
 
 const ModalForm = () => {
@@ -19,19 +19,19 @@ const ModalForm = () => {
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        const unsubscribe = onSnapshot(collection(db, "topik"), (querySnapshot) => {
+        const unsubscribe = onSnapshot(query(collection(db, "topik"), orderBy("name")), (querySnapshot) => {
             const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             
             let temp = newData.map((data, i) => {
-                console.log(data)
+                // console.log(data)
                 return {value: data.name, label: data.name, isFixed: true, id: data.id}
             })
             
-            console.log("HAH HIH")
-            console.log(temp)
+            // console.log("HAH HIH")
+            // console.log(temp)
 
             setOptions(temp);
-            console.log(options)
+            // console.log(options)
         });
 
         // Return the unsubscribe function to clean up the listener
@@ -45,7 +45,7 @@ const ModalForm = () => {
 
     const handleFormGambar = (e) => {
         setFormGambar(e.target.files[0])
-        console.log(e.target.files[0])
+        // console.log(e.target.files[0])
     }
     const handleFormTopik = (val, actionMeta) => {
         if(val != null){
@@ -57,11 +57,11 @@ const ModalForm = () => {
     }
     const handleFormJudul = (e) => {
         setFormJudul(e.target.value)
-        console.log(e.target.value)
+        // console.log(e.target.value)
     }
     const handleFormDeskripsi = (e) => {
         setFormDeskripsi(e.target.value)
-        console.log(e.target.value)
+        // console.log(e.target.value)
     }
 
     const handleSubmit = async (e) => {
@@ -82,7 +82,7 @@ const ModalForm = () => {
                     .then((url) => {
                         setDownloadUrl(url)
                         try {
-                            console.log(url)
+                            // console.log(url)
                             const docRef = addDoc(collection(db, "gambar"), {
                                 filename: formGambar.name,
                                 topic: formTopik,
@@ -125,7 +125,7 @@ const ModalForm = () => {
                 console.log(e)
             })
         
-        console.log("modal submitted")
+        // console.log("modal submitted")
         setShow(false);
     }
 

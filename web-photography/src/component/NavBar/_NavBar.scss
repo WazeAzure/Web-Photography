@@ -74,6 +74,8 @@ $borderLeftColor:#58b5fc;
 .navbar__li-box {
   height: 43px;
   margin-top:15px;
+  border-left: 7px solid transparent;
+  transition: 100ms;
 }
 .navbar__li-box:hover {
   border-left: 7px solid $borderLeftColor;

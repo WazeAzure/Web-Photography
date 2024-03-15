@@ -5,15 +5,22 @@ import { signOut } from "@firebase/auth";
 import { auth, db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { onSnapshot, collection, query, orderBy } from "@firebase/firestore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { Button, Card } from "react-bootstrap";
+import HoverComponent from "./HoverComponent";
+import ModalNavbar from "../ModalPopup/ModalNavbar";
 
 const NavBar = ({ li }) => {
     const [data, setData] = useState(null)
+    const [modalView, setModalView] = useState(false)
+    const [idTarget, setIdTarget] = useState(null)
 
     useEffect(() => {
         const unsubscribe = onSnapshot(query(collection(db, "topik"), orderBy('name')), (querySnapshot) => {
             const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             setData(newData);
-            console.log(newData); // Log the new data, not the state variable 'data'
+            // console.log(newData); // Log the new data, not the state variable 'data'
         });
 
         // Return the unsubscribe function to clean up the listener
@@ -46,6 +53,9 @@ const NavBar = ({ li }) => {
             console.log(error);
         });
     }
+
+
+
     return (
         <nav className="navbar-menu" style={{ width: window === false ? 250 : 60 }}>
         <div className="burger" onClick={() => openClose()}>
@@ -68,6 +78,7 @@ const NavBar = ({ li }) => {
             <img src="/img/menu.svg" alt="burger" style={{width: "40px", margin: "0 0 0 10px"}} />
         </div>
         <ul className="navbar__list">
+            <ModalNavbar show={modalView} setShow={setModalView} idTarget={idTarget} /> 
             { isAuthenticated && 
             <>
             <Link to='/dashboard'>
@@ -118,6 +129,7 @@ const NavBar = ({ li }) => {
             ))}
             {data?.map((item, i) => (
                 <div className="navbar__li-box" key={item.id}>
+                    <HoverComponent itemId={item.id} setModalView={setModalView} setIdTarget={setIdTarget} >
                     <Link to={'/gallery/' + item.name.toLowerCase()}>
                         <li
                         className="navbar__li"
@@ -126,6 +138,7 @@ const NavBar = ({ li }) => {
                         {item.name}
                         </li>
                     </Link>
+                    </HoverComponent>
                 </div>
             ))}
         </ul>
