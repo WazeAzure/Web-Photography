@@ -34,6 +34,7 @@ $borderLeftColor:#58b5fc;
 
 .navbar-menu {
   height:100vh;
+  overflow-y: auto;
   background-color:$backgroundColor;
   box-shadow: 1px 1px 7px rgba(0,0,0,0.15);
   transition: all 0.5s ease;
@@ -43,6 +44,10 @@ $borderLeftColor:#58b5fc;
 .burger{
   display:flex;
   justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 120;
 }
 .burger img {
   padding: 25px 8px 0px 0px;
@@ -50,7 +55,6 @@ $borderLeftColor:#58b5fc;
 }
 .navbar__list {
   list-style-type: none;
-  
 }
 .navbar__li {
   display: inline-block;

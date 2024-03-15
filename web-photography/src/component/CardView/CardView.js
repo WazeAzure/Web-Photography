@@ -4,24 +4,13 @@ import { getDocs, collection, onSnapshot, query, orderBy } from "@firebase/fires
 import { useState } from "react";
 import CardPhoto from "./CardPhoto";
 
-const CardView = () => {
-    const [data, setData] = useState(null)
-
-    useEffect(() => {
-        const unsubscribe = onSnapshot(query(collection(db, "gambar"), orderBy("date")), (querySnapshot) => {
-            const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-            setData(newData);
-            // console.log(newData); // Log the new data, not the state variable 'data'
-        });
-
-        // Return the unsubscribe function to clean up the listener
-        return () => unsubscribe();
-    }, [])
+const CardView = ({photoList, setPhotoList}) => {
+    
 
     return (
         <div className="d-flex p-2" style={{flexWrap: "wrap"}}>
         {
-            data?.map((d, i) => (
+            photoList?.map((d, i) => (
                 <CardPhoto d={d} i={i} key={i}/>
             ))
         }

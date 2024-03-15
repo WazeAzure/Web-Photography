@@ -6,10 +6,12 @@ import { Col, Dropdown, Row } from "react-bootstrap";
 import SearchBar from "../SearchBar/SearchBar";
 import { Form, InputGroup, Button } from "react-bootstrap";
 import ModalForm from "../Modals/Modals";
+import { useState } from "react";
 
 
 
-const Utilities = () => {
+const Utilities = ({photoList, setPhotoList}) => {
+
     const handleSubmit = (e) => {
         console.log("dari utilities form submitted")
     }
@@ -21,7 +23,7 @@ const Utilities = () => {
     return (
         <>
             <Row className="mb-2">
-                <SearchBar  className="col" />
+                <SearchBar  className="col" photoList={photoList} setPhotoList={setPhotoList} />
                 <Form.Group as={Col} controlId="form right">
                     <Row>
                         <Dropdown className="col">

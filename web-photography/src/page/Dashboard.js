@@ -9,6 +9,8 @@ import CardView from '../component/CardView/CardView';
 import { Row } from 'react-bootstrap';
 
 const Dashboard = () => {
+    const [photoList, setPhotoList] = useState([]);
+
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     useEffect(()=>{
         onAuthStateChanged(auth, (user) => {
@@ -35,8 +37,8 @@ const Dashboard = () => {
         <div className="container align-middle" style={{marginTop: "1rem"}}>
             <h1>Web Portfolio Dashboard</h1>
             <hr />
-            <Utilities />
-            <CardView />
+            <Utilities photoList={photoList} setPhotoList={setPhotoList} />
+            <CardView  photoList={photoList} setPhotoList={setPhotoList} />
         </div>
     )
 }
