@@ -139,7 +139,7 @@ const ModalForm = () => {
             <Modal show={show} onHide={handleClose}>
                 <form className="col" onSubmit={handleSubmit}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Tambah Gambar</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group controlId="formFile" className="mb-3">
