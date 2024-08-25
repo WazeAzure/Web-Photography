@@ -85,7 +85,7 @@ const ModalForm = () => {
                             // console.log(url)
                             const docRef = addDoc(collection(db, "gambar"), {
                                 filename: formGambar.name,
-                                topic: formTopik,
+                                topic: formTopik.toLowerCase(),
                                 url: url,
                                 description: formDeskripsi,
                                 date: Timestamp.now(),
@@ -96,18 +96,18 @@ const ModalForm = () => {
                             
                             let isExist = false
                             options.forEach((x) => {
-                                if (x.value == formTopik){
+                                if (x.value == formTopik.toLowerCase()){
                                     isExist = true;
                                 }
                             })
 
                             if(!isExist){
                                 const docRef2 = addDoc(collection(db, "topik"), {
-                                    name: formTopik
+                                    name: formTopik.toLowerCase()
                                 })
 
                                 const docRef3 = addDoc(collection(db, "deskripsi-utama"), {
-                                    name: formTopik,
+                                    name: formTopik.toLowerCase(),
                                     description: ""
                                 })
                             }
@@ -130,26 +130,26 @@ const ModalForm = () => {
     }
 
     return (
-        <div className="col">
-            <Button variant="primary" onClick={handleShow}>
+        <div className="col" style={{marginBottom: "0.5rem"}}>
+            <Button variant="primary" onClick={handleShow} style={{width: "6rem"}}>
                 <FontAwesomeIcon icon={faAdd} className="pr-1"/>
-                photos
+                <span style={{marginLeft: "0.5rem"}}>photos</span>
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <form className="col" onSubmit={handleSubmit}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Tambah Gambar</Modal.Title>
+                        <Modal.Title>Add New Picture</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group controlId="formFile" className="mb-3">
-                            <Form.Label>Gambar:</Form.Label>
+                            <Form.Label>File:</Form.Label>
                             <Form.Control type="file" required onChange={handleFormGambar}/>
                             <Form.Control.Feedback type="invalid">
                                 Please upload a file.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group controlId="formTopik">
+                        <Form.Group controlId="formTopik.toLowerCase()">
                             <Form.Label>Topik:</Form.Label>
 
                             <CreatableSelect isClearable options={options} onChange={handleFormTopik}/>
@@ -159,7 +159,7 @@ const ModalForm = () => {
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group controlId="formJudul" className="mb-3">
-                            <Form.Label>Judul:</Form.Label>
+                            <Form.Label>Title:</Form.Label>
                             <Form.Control type="text" required value={formJudul} onChange={handleFormJudul}/>
                             <Form.Control.Feedback type="invalid">
                                 Please input a title.

@@ -36,7 +36,6 @@ const Dashboard = () => {
               // https://firebase.google.com/docs/reference/js/firebase.User
               const uid = user.uid;
               // ...
-              console.log("uid", uid)
               setIsLoggedIn(true);
             } else {
               // User is signed out

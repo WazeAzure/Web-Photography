@@ -32,7 +32,7 @@ const Login = () => {
     }
  
     return(
-        <Row className="h-100">
+        <Row className="h-100" style={{width: "100%"}}>
             <Col id="empty-space" className="h-100">
 
             </Col>

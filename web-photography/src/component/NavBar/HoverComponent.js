@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const HoverComponent = ({children, itemId, setModalView, setIdTarget}) => {
+const HoverComponent = ({children, itemId, setModalView, setIdTarget, isAuthenticated}) => {
     const [show, setShow] = useState(false);
 
     const handleDelete = (e) => {
@@ -27,9 +27,9 @@ const HoverComponent = ({children, itemId, setModalView, setIdTarget}) => {
     }
 
     return (
-        <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+        <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} style={{display: "block"}}>
             {children}
-            { show && (
+            { isAuthenticated && show && (
                 <Button variant="danger" onClick={handleDelete} id={itemId} style={{marginLeft: "1rem"}} >
                     <FontAwesomeIcon icon={faTrash} />
                 </Button>

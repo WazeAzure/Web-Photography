@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-$backgroundColor: white;
-$textcolor:#000000;
-$borderLeftColor:#58b5fc;
+$backgroundColor: #131313;
+$textcolor:#ffffff;
+$borderLeftColor:#FBEE0A;
 
 .navbar-menu::-webkit-scrollbar {
     width: 10px;
-
 }
 
 /* Track */
@@ -33,20 +32,31 @@ $borderLeftColor:#58b5fc;
 }
 
 .navbar-menu {
-  height:100vh;
+  height:auto;
   overflow-y: auto;
   background-color:$backgroundColor;
   box-shadow: 1px 1px 7px rgba(0,0,0,0.15);
   transition: all 0.5s ease;
-  position: fixed;
-  z-index: 100;
+  width: 60px;
+  // position: fixed;
+  // z-index: 100;
 }
-.burger{
+
+.navbar-menu.open {
+  width: 270px;
+  transition: all 0.5s ease;
+}
+
+.burger {
+  height: 60px;
   display:flex;
   justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
   position: sticky;
   top: 0;
-  background-color: white;
+  background-color: #FBEE0A;
+  color: black;
   z-index: 120;
 }
 .burger img {
@@ -55,21 +65,22 @@ $borderLeftColor:#58b5fc;
 }
 .navbar__list {
   list-style-type: none;
+  display: block;
 }
 .navbar__li {
   display: inline-block;
   padding:0px 0px 0px 12px;
   position: relative;
   top:2.5px;
-  font-size: 16px;
+  font-size: 1.1rem;
   letter-spacing: 0px;
   line-height: 38px;
   color: $textcolor;
-  font-family: "Lato";
+  font-family: "piperegular";
   font-weight: 400;
 }
 .navbar__li-box:first-child {
-  margin-top:53px;
+  margin-top:15px;
 }
 .navbar__li-box {
   height: 43px;
@@ -85,4 +96,35 @@ $borderLeftColor:#58b5fc;
 .navbar__li-box a {
     width: 100%;
     height: 100%;
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;  /* Horizontally center */
+  align-items: center;      /* Vertically center */
+}
+
+tspan { white-space:pre }
+.shp0 { fill: #000000; stroke: #000000; stroke-width: 2px; }
+
+
+/* Responsive handling */
+@media (max-width: 991.98px) {
+  .navbar-menu {
+    width: 100%;
+    height: 60px;
+    max-height: 60px;
+    padding: 0;
+  }
+
+  .burger {
+    width: 100%;
+    height: 60px;
+  }
+
+  .navbar-menu.open {
+    width: 100%;
+    height: 350px;
+    max-height: 350px;
+  }
 }

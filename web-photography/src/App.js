@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 
 import { BrowserRouter as Router} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
@@ -16,10 +16,12 @@ import NavBar from './component/NavBar/NavBar';
 import PrivateRoute from './page/PrivateRoute';
 import Contact from './page/Contact';
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const [loading, setLoading] = useState(true);
+  const scrollContainerRef = useRef(null);
+
   useEffect(() => {
     setTimeout(() => setLoading(false), 3300)
   }, [])
@@ -30,15 +32,16 @@ function App() {
 
   return (
     <Router className="mt-1">
-      <div className="row" style={{height: "100%"}}>
-        <NavBar className="col"
+      <div className="app-container" style={{height: "100%"}}>
+        <NavBar className=""
           li={[
           // ['Home', '', '/'],
           ['About', '', '/about'],
           ['Contact', '', '/contact'],
           ]}
         />
-        <section className="col">
+
+        <section className="gallery-content-view" style={{overflowY: "auto", width: "100%"}}>
           <Routes>
               <Route path="/" index element={<Home/>}/>
               <Route path="/login" element={<Login/>}/>

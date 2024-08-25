@@ -1,16 +1,54 @@
+
+/* Handle Style */
 .customRowEd {
     margin: auto;
     display: flex;
-    justify-content: center;
     align-items: center;
     width: auto;
+    height: 100%;
+    float: left;
+    white-space: nowrap;
 }
 
 .customRowEd div {
     margin: 0 1rem;
 }
 
+.customRowEd > div:first-child {
+    width: 20rem;
+}
+
 .customRowEd img {
     width: auto;
     height: 70vh;
+}
+
+@media (max-width: 991.98px) {
+    .customRowEd {
+        flex-direction:column;
+        float: none;
+    }
+
+    .customRowEd div {
+        margin-top: 2rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .customRowEd > div:first-child {
+        width: 100%;
+        background: #ECECEC;
+        padding: 1rem 1rem;
+        margin: 0;
+        padding-top: 2rem;
+    }
+    
+    .customRowEd > div:first-child textarea {
+        background: #ECECEC;
+    }
+    
+    .card img{
+        width: 100%;
+        height: auto;
+    }
 }

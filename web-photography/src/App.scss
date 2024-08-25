@@ -1,1 +1,47 @@
 @import './component/NavBar/NavBar';
+
+/* Handle Scroll Wheel */
+section::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    display: none;
+}
+
+/* Handle */
+section::-webkit-scrollbar-thumb {
+    background: #888;
+    width: 5px;
+    height: 5px;
+    display: none;
+}
+
+/* Handle on hover */
+section::-webkit-scrollbar-thumb:hover {
+    background: #888;
+    display: inline;
+    width: 5px;
+    height: 5px;
+    border-radius:200px;
+    transition: all 1s ease;
+}
+
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Responsive handling */
+@media (max-width: 991.98px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    section {
+        height: 100%;
+    }
+}
