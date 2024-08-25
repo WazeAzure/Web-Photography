@@ -41,7 +41,7 @@ const Gallery = () => {
             querySnapshot.forEach((doc) => {
                 data = doc.data();
                 setDocRefId(doc.id)
-                console.log(data)
+                // console.log(data)
             })
             // console.log("unsubcribe called")
             if(data.description == null){
@@ -69,11 +69,16 @@ const Gallery = () => {
         if(scrollContainer){
         const handleWheel = (event) => {
             const scrollableElement = scrollContainer;
-            console.log(scrollableElement)
+            // console.log(scrollableElement)
 
-
+            let add = 0;
+            if(event.deltaX != 0){
+                add = event.deltaX;
+            } else {
+                add = event.deltaY;
+            }
             scrollableElement.scrollTo({
-                left: scrollableElement.scrollLeft + event.deltaY,
+                left: scrollableElement.scrollLeft + add,
                 behavior: "auto"
             })
             // scrollableElement.scrollLeft += event.deltaY;
