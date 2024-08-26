@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/web-photography/static/css/main.7eb9aa93.css",
+    "main.js": "/web-photography/static/js/main.935376bd.js",
+    "static/js/453.56cd3e27.chunk.js": "/web-photography/static/js/453.56cd3e27.chunk.js",
+    "static/media/Pipe-Bold.otf": "/web-photography/static/media/Pipe-Bold.367140da31c174168db4.otf",
+    "static/media/Pipe-Heavy.otf": "/web-photography/static/media/Pipe-Heavy.3238e1648111e572510a.otf",
+    "static/media/Pipe-XBold.otf": "/web-photography/static/media/Pipe-XBold.af3d0e982cab9f995b28.otf",
+    "static/media/Pipe-Regular.otf": "/web-photography/static/media/Pipe-Regular.b592229294715bcc102e.otf",
+    "static/media/Pipe-Light.otf": "/web-photography/static/media/Pipe-Light.3536ec35a15f9992a7b1.otf",
+    "index.html": "/web-photography/index.html",
+    "main.7eb9aa93.css.map": "/web-photography/static/css/main.7eb9aa93.css.map",
+    "main.935376bd.js.map": "/web-photography/static/js/main.935376bd.js.map",
+    "453.56cd3e27.chunk.js.map": "/web-photography/static/js/453.56cd3e27.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7eb9aa93.css",
+    "static/js/main.935376bd.js"
+  ]
+}
