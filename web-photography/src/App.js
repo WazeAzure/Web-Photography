@@ -22,6 +22,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const scrollContainerRef = useRef(null);
 
+  const basename = '/Web-Photography';
+
   useEffect(() => {
     setTimeout(() => setLoading(false), 3300)
   }, [])
@@ -31,7 +33,7 @@ function App() {
   }
 
   return (
-    <Router className="mt-1">
+    <Router className="mt-1" basename={basename}>
       <div className="app-container" style={{height: "100%"}}>
         <NavBar className=""
           li={[

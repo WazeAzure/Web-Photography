@@ -38,7 +38,7 @@ const Login = () => {
             </Col>
             <Col className="container align-middle" style={{"margin": "2rem"}}>      
                 <section>
-                    <h1>Login</h1>
+                    <h1>asdasd</h1>
                     <div>                                                                 
                         <Form className="Form-Login">                                              
                             <Form.Group>
