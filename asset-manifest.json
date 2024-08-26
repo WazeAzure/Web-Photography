@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Web-Photography/static/css/main.058d8482.css",
-    "main.js": "/Web-Photography/static/js/main.12f36ada.js",
+    "main.js": "/Web-Photography/static/js/main.ac47287c.js",
     "static/js/453.56cd3e27.chunk.js": "/Web-Photography/static/js/453.56cd3e27.chunk.js",
     "static/media/Pipe-Bold.otf": "/Web-Photography/static/media/Pipe-Bold.367140da31c174168db4.otf",
     "static/media/Pipe-Heavy.otf": "/Web-Photography/static/media/Pipe-Heavy.3238e1648111e572510a.otf",
@@ -10,11 +10,11 @@
     "static/media/Pipe-Light.otf": "/Web-Photography/static/media/Pipe-Light.3536ec35a15f9992a7b1.otf",
     "index.html": "/Web-Photography/index.html",
     "main.058d8482.css.map": "/Web-Photography/static/css/main.058d8482.css.map",
-    "main.12f36ada.js.map": "/Web-Photography/static/js/main.12f36ada.js.map",
+    "main.ac47287c.js.map": "/Web-Photography/static/js/main.ac47287c.js.map",
     "453.56cd3e27.chunk.js.map": "/Web-Photography/static/js/453.56cd3e27.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.058d8482.css",
-    "static/js/main.12f36ada.js"
+    "static/js/main.ac47287c.js"
   ]
 }
