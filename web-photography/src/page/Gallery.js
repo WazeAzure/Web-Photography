@@ -173,7 +173,7 @@ const Gallery = () => {
 
         await batch.commit();
 
-        window.location.href = `/gallery/${topikText}`;
+        window.location.href = `/Web-Photography/gallery/${topikText}`;
     }
 
     const handleClose = (e) => {
