@@ -14,14 +14,14 @@ function ModalPopup({show, setShow, idTarget}) {
       const x = getDoc(doc(db, "gambar", idTarget))
                 .then((querySnapshot) => {
                     const tempData = querySnapshot.data()
-                    console.log(tempData)
+                    // console.log(tempData)
                     const imgRef = ref(storage, tempData.filename)
                     deleteObject(imgRef)
                         .then(() => {
-                            console.log("file deleted")
+                            // console.log("file deleted")
                             const docRef = deleteDoc(doc(db, "gambar", idTarget))
                         }).catch((err) => {
-                            console.log(err)
+                            // console.log(err)
                         }) 
                     
                 })

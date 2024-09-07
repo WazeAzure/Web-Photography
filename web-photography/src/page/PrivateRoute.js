@@ -9,7 +9,7 @@ function PrivateRoute() {
         isAuthenticated = true;
     }
 
-    console.log(auth);
+    // console.log(auth);
 
     return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 }

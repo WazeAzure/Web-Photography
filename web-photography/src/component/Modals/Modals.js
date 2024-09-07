@@ -70,7 +70,7 @@ const ModalForm = () => {
         // try to upload the image first
         if(formGambar === null){
             // error
-            console.log("error")
+            // console.log("error")
             return ;
         }
 
@@ -117,12 +117,12 @@ const ModalForm = () => {
                             setFormJudul('')
                             setFormDeskripsi('')
                         } catch(err) {
-                            console.log(err)
+                            // console.log(err)
                         }
                     })
             })
             .catch((e) => {
-                console.log(e)
+                // console.log(e)
             })
         
         // console.log("modal submitted")

@@ -47,10 +47,10 @@ const NavBar = ({ li }) => {
         signOut(auth).then(() => {
         // Sign-out successful.
             navigate("/");
-            console.log("Signed out successfully")
+            // console.log("Signed out successfully")
         }).catch((error) => {
         // An error happened.
-            console.log(error);
+            // console.log(error);
         });
     }
 
@@ -63,10 +63,10 @@ const NavBar = ({ li }) => {
                     <div style={{padding: "10px 0 0 0"}}>
                         <h2 style={{fontSize: "1.5rem", fontFamily: "pipebold"}}>AgusHandjojo</h2>
                     </div>
-                    <div class="svg-container" style={{width: "40px", marginLeft: "1rem", paddingRight: "5px"}}>
+                    <div className="svg-container" style={{width: "40px", marginLeft: "1rem", paddingRight: "5px"}}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 28" width="41" height="28">
                             <g id="side menu">
-                            <path id="menu" class="shp0" d="M2.3 3.56L38.68 3.56C39.3 3.56 39.81 3.05 39.81 2.42C39.81 1.79 39.3 1.28 38.68 1.28L2.3 1.28C1.67 1.28 1.16 1.79 1.16 2.42C1.16 3.05 1.67 3.56 2.3 3.56ZM38.68 24.02L2.3 24.02C1.67 24.02 1.16 24.53 1.16 25.16C1.16 25.79 1.67 26.29 2.3 26.29L38.68 26.29C39.3 26.29 39.81 25.79 39.81 25.16C39.81 24.53 39.3 24.02 38.68 24.02ZM38.68 12.65L2.3 12.65C1.67 12.65 1.16 13.16 1.16 13.79C1.16 14.42 1.67 14.93 2.3 14.93L38.68 14.93C39.3 14.93 39.81 14.42 39.81 13.79C39.81 13.16 39.3 12.65 38.68 12.65Z"/>
+                            <path id="menu" className="shp0" d="M2.3 3.56L38.68 3.56C39.3 3.56 39.81 3.05 39.81 2.42C39.81 1.79 39.3 1.28 38.68 1.28L2.3 1.28C1.67 1.28 1.16 1.79 1.16 2.42C1.16 3.05 1.67 3.56 2.3 3.56ZM38.68 24.02L2.3 24.02C1.67 24.02 1.16 24.53 1.16 25.16C1.16 25.79 1.67 26.29 2.3 26.29L38.68 26.29C39.3 26.29 39.81 25.79 39.81 25.16C39.81 24.53 39.3 24.02 38.68 24.02ZM38.68 12.65L2.3 12.65C1.67 12.65 1.16 13.16 1.16 13.79C1.16 14.42 1.67 14.93 2.3 14.93L38.68 14.93C39.3 14.93 39.81 14.42 39.81 13.79C39.81 13.16 39.3 12.65 38.68 12.65Z"/>
                             </g>
                         </svg>
                     </div>

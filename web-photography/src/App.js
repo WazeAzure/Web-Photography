@@ -22,8 +22,9 @@ function App() {
   const [loading, setLoading] = useState(true);
   const scrollContainerRef = useRef(null);
 
-  const basename = '/Web-Photography';
-
+  // const basename = '/Web-Photography';
+  const basename = '/';
+  
   useEffect(() => {
     setTimeout(() => setLoading(false), 3300)
   }, [])

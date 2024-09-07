@@ -28,7 +28,7 @@ const SearchBar = ({photoList, setPhotoList, data, setData}) => {
         }
 
         // setTesting('')
-        console.log("search bar form submitted")
+        // console.log("search bar form submitted")
     }
 
     

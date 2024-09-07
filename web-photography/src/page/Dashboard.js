@@ -20,7 +20,7 @@ const Dashboard = () => {
             const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             setData(newData)
             setPhotoList(newData)
-            console.log(newData)
+            // console.log(newData)
             // console.log(newData); // Log the new data, not the state variable 'data'
         });
 
@@ -40,7 +40,7 @@ const Dashboard = () => {
             } else {
               // User is signed out
               // ...
-              console.log("user is logged out")
+            //   console.log("user is logged out")
 
               setIsLoggedIn(false)
             }

@@ -48,7 +48,7 @@ function UpdateModal({ show, setShow, idTarget }) {
                 const tempData = querySnapshot.data();
     
                 setFormJudul(tempData.title);
-                console.log(tempData.topic)
+                // console.log(tempData.topic)
                 setFormTopik({value: tempData.topic, label: tempData.topic});
             });
         }
