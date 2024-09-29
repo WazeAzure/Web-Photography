@@ -33,14 +33,11 @@ const Login = () => {
  
     return(
         <Row className="h-100" style={{width: "100%"}}>
-            <Col id="empty-space" className="h-100">
-
-            </Col>
             <Col className="container align-middle" style={{"margin": "2rem"}}>      
                 <section>
-                    <h1>asdasd</h1>
                     <div>                                                                 
                         <Form className="Form-Login">                                              
+                            <h1>Login</h1>
                             <Form.Group>
                                 <Form.Label>
                                     Email address

@@ -11,6 +11,7 @@ import Dashboard from './page/Dashboard';
 import Loading from './page/Loading';
 import Gallery from './page/Gallery';
 import About from './page/About';
+import PageNotFound from './page/PageNotFound';
 
 import NavBar from './component/NavBar/NavBar';
 import PrivateRoute from './page/PrivateRoute';
@@ -46,7 +47,7 @@ function App() {
 
         <section className="gallery-content-view" style={{overflowY: "auto", width: "100%"}}>
           <Routes>
-              <Route path="/" index element={<Home/>}/>
+              <Route path="/" index element={<About />}/>
               <Route path="/login" element={<Login/>}/>
               <Route path='/dashboard' element={<PrivateRoute />}>
                 <Route path="/dashboard" element={<Dashboard />}/>
@@ -54,6 +55,9 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/contact' element={<Contact />} />
               <Route path="/gallery/:name" element={<Gallery />} />
+
+              
+              <Route path="*" element={<PageNotFound />} />
           </Routes>
         </section>
       </div>
